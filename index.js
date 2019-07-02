@@ -2,12 +2,14 @@ const readline = require('readline-sync');
 
 console.log('Welcome to the calculator!');
 
-console.log('Multiplication. Please enter a number:');
-const number1 = readline.prompt();
+console.log('\nMultiplication. \nPlease enter a number:');
+const firstargument = readline.prompt();
+const firstnumber = +firstargument
 
-console.log('Please enter another number:');
-const number2 = readline.prompt();
+console.log('\nPlease enter another number:');
+const secondargument = readline.prompt();
+const secondnumber = +secondargument
 
-
-console.log((+number1)*(+number2))
+const answer = firstnumber*secondnumber
+console.log('\n' + firstargument + ' times ' + secondargument + ' equals ' + answer)
 
