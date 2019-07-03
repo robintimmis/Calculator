@@ -1,15 +1,33 @@
 const readline = require('readline-sync');
 
 console.log('Welcome to the calculator!');
+console.log('==========================');
 
-console.log('\nMultiplication. \nPlease enter a number:');
+console.log('\nPlease enter the operator:');
+const operator =  readline.prompt();
+
+console.log('\nPlease enter the first number:');
 const firstargument = readline.prompt();
-const firstnumber = +firstargument
+const firstnumber = +firstargument;
 
-console.log('\nPlease enter another number:');
+console.log('\nPlease enter the second number:');
 const secondargument = readline.prompt();
-const secondnumber = +secondargument
+const secondnumber = +secondargument;
 
-const answer = firstnumber*secondnumber
-console.log('\n' + firstargument + ' times ' + secondargument + ' equals ' + answer)
+if (operator == '+') {
+    const answer = firstnumber + secondnumber;
+    console.log('\nThe answer is: ' + answer);
+} else if (operator == '-') {
+    const answer = firstnumber - secondnumber;
+    console.log('\nThe answer is: ' + answer);
+} else if (operator == '*') {
+    const answer = firstnumber * secondnumber;
+    console.log('\nThe answer is: ' + answer);
+} else if (operator == '/') {
+    const answer = firstnumber/secondnumber;
+    console.log('\nThe answer is: ' + answer);
+}
+
+
+
 
