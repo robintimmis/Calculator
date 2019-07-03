@@ -14,25 +14,22 @@ console.log('\nPlease enter the second number:');
 const secondargument = readline.prompt();
 const secondnumber = +secondargument;
 
+let answer = 0;
 switch (operator) {
     case '+':
         answer = firstnumber + secondnumber;
-        console.log('\nThe answer is: ' + answer);
         break;
     case '-':
         answer = firstnumber - secondnumber;
-        console.log('\nThe answer is: ' + answer);
         break;
     case '*':
         answer = firstnumber * secondnumber;
-        console.log('\nThe answer is: ' + answer);
         break;
     case '/':
         answer = firstnumber / secondnumber;
-        console.log('\nThe answer is: ' + answer);
         break;
 }
 
-
+console.log('\nThe answer is: ' + answer);
 
 
