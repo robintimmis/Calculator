@@ -14,18 +14,23 @@ console.log('\nPlease enter the second number:');
 const secondargument = readline.prompt();
 const secondnumber = +secondargument;
 
-if (operator == '+') {
-    const answer = firstnumber + secondnumber;
-    console.log('\nThe answer is: ' + answer);
-} else if (operator == '-') {
-    const answer = firstnumber - secondnumber;
-    console.log('\nThe answer is: ' + answer);
-} else if (operator == '*') {
-    const answer = firstnumber * secondnumber;
-    console.log('\nThe answer is: ' + answer);
-} else if (operator == '/') {
-    const answer = firstnumber/secondnumber;
-    console.log('\nThe answer is: ' + answer);
+switch (operator) {
+    case '+':
+        answer = firstnumber + secondnumber;
+        console.log('\nThe answer is: ' + answer);
+        break;
+    case '-':
+        answer = firstnumber - secondnumber;
+        console.log('\nThe answer is: ' + answer);
+        break;
+    case '*':
+        answer = firstnumber * secondnumber;
+        console.log('\nThe answer is: ' + answer);
+        break;
+    case '/':
+        answer = firstnumber / secondnumber;
+        console.log('\nThe answer is: ' + answer);
+        break;
 }
 
 
