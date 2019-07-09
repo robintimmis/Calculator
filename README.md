@@ -1,4 +1,4 @@
 # Calculator
 
 calculator-js contains sample solutions
-test.js just contains rough work
+\ntest.js just contains rough work
