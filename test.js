@@ -3,17 +3,15 @@
 // also closures (functions)
 // also create method for objects
 // also defining methods for functions
+// also read about ES9 modules
 
 const readline = require('readline-sync');
 
-let obj = {A:0,
-           E:0,
-           I:0,
-           O:0,
-           U:0};
 
-console.log(obj);
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
-obj.A += 1;
+const result = words.filter(function(word) {return word.length > 6});
 
-console.log(obj);
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+

@@ -12,20 +12,14 @@ exports.performOneArithmeticCalculation = function() {
 
 
 function calculateAnswer(number_arr, operator) {
-    let answer = number_arr[0];
     switch (operator) {
         case '+':
-            for (var i of number_arr.slice(1,)) {answer += i};   //in sample solution use for loop not for .. of, which better?
-            break;
+            return number_arr.reduce((acc, curr) => acc + curr);         
         case '-':
-            for (var i of number_arr.slice(1,)) {answer -= i};       
-            break;
+            return number_arr.reduce((acc, curr) => acc - curr);         
         case '*':
-            for (var i of number_arr.slice(1,)) {answer *= i};
-            break;
+            return number_arr.reduce((acc, curr) => acc * curr);         
         case '/':
-            for (var i of number_arr.slice(1,)) {answer /= i};
-            break;
+            return number_arr.filter(x => x !== 0).reduce((acc, curr) => acc / curr);         
     }
-    return answer
 }
