@@ -24,33 +24,28 @@ function performOneVowelCountingCalculation() {
         O:0,
         U:0};
    
-    for (let index in upperCaseString) {
-        if (upperCaseString[index] === 'A') {
-            obj.A += 1;
-        }
-        else if (upperCaseString[index] === 'E') {
-            obj.E += 1;
-        }
-        else if (upperCaseString[index] === 'I') {
-            obj.I += 1;
-        }
-        else if (upperCaseString[index] === 'O') {
-            obj.O += 1;
-        }
-        else if (upperCaseString[index] === 'U') {
-            obj.U += 1;
-        }
-    }
+    counts = getLetterCounts(obj, upperCaseString);
+
     console.log('The vowel counts are:')
     for (let vowel in obj) {
         console.log(`  ${vowel}: ${answer[vowel]}`);
     }
 }
 
+function getLetterCounts(counts, string) {
+    for (let char of string) {
+        if (counts.hasOwnProperty(char)) {
+            counts[char]++;
+        }
+    return counts;
+    }
+}
+
+
 function getCalculationMode() {
     return getStringFromPrompt(`Which calculator mode do you want?
-     1) Arithmetic
-     2) Vowel counting
+     ${ARITHMETIC_MODE}) Arithmetic
+     ${VOWEL_COUNTING_MODE}) Vowel counting
     or type q to quit`);
 }
 
