@@ -1,26 +1,19 @@
 // go over end of array methods once done functions
 // also go over iterative methods for arrays
 // also closures (functions)
+// also create method for objects
+// also defining methods for functions
 
 const readline = require('readline-sync');
 
+let obj = {A:0,
+           E:0,
+           I:0,
+           O:0,
+           U:0};
 
-console.log(getNumberFromPrompt('hi there'));
+console.log(obj);
 
+obj.A += 1;
 
-function getNumberFromPrompt(prompt) {
-    let number;
-    while (true) {
-        console.log(prompt);
-        const response = readline.prompt();
-        number = +response;
-        if (isNaN(number)) {
-            console.log('Sorry that is not a number, please try again.')
-          } else {
-            break;
-        }
-    }
-    return number;
-}
-
-
+console.log(obj);

@@ -1,13 +1,58 @@
 const readline = require('readline-sync');
 
+const ARITHMETIC_MODE = '1';
+const VOWEL_COUNTING_MODE = '2';
+ 
 printWelcomeMessage();
+while (true) {
+  const calculationMode = getCalculationMode();
+  if (calculationMode === ARITHMETIC_MODE) {
+    performOneArithmeticCalculation();
+  } else if (calculationMode === VOWEL_COUNTING_MODE) {
+    performOneVowelCountingCalculation();
+  } else if (calculationMode === 'q') {
+      break;
+  } 
+} 
 
-let run;
-do {
-    performOneCalculation();
-    run =  getStringFromPrompt('\nWould you like to do another calculation? (y/n)');   
-} while (run == 'y');
+function performOneVowelCountingCalculation() {
+    const upperCaseString = getStringFromPrompt('\nPlease enter a string:').toUpperCase();
 
+    let obj = {A:0,
+        E:0,
+        I:0,
+        O:0,
+        U:0};
+   
+    for (let index in upperCaseString) {
+        if (upperCaseString[index] === 'A') {
+            obj.A += 1;
+        }
+        else if (upperCaseString[index] === 'E') {
+            obj.E += 1;
+        }
+        else if (upperCaseString[index] === 'I') {
+            obj.I += 1;
+        }
+        else if (upperCaseString[index] === 'O') {
+            obj.O += 1;
+        }
+        else if (upperCaseString[index] === 'U') {
+            obj.U += 1;
+        }
+    }
+    console.log('The vowel counts are:')
+    for (let vowel in obj) {
+        console.log(`  ${vowel}: ${answer[vowel]}`);
+    }
+}
+
+function getCalculationMode() {
+    return getStringFromPrompt(`Which calculator mode do you want?
+     1) Arithmetic
+     2) Vowel counting
+    or type q to quit`);
+}
 
 function printWelcomeMessage() {
     console.log('Welcome to the calculator!');
@@ -15,14 +60,14 @@ function printWelcomeMessage() {
 }
 
 
-function performOneCalculation() {
+function performOneArithmeticCalculation() {
     const operator =  getStringFromPrompt('\nPlease enter the operator:');
     const numberOfNumbers = getNumberFromPrompt(
-        '\nHow many numbers do you want to ' + operator + '?'
+        `How many numbers do you want to ${operator}?`
         );
     const numbers = getNumberArrayFromPrompt(numberOfNumbers);
     const answer = calculateAnswer(numbers, operator);
-    console.log('\nThe answer is: ' + answer);
+    console.log(`The answer is: ${answer}`);
 }
 
 
@@ -49,7 +94,7 @@ function getNumberArrayFromPrompt(arrayLength) {
     let number_arr = [];              //in sample solution starts with correct sized array, which is better?
     for (let i = 1; i <= arrayLength;i++) { 
         const number = getNumberFromPrompt(
-            '\nPlease enter number ' + i + ':'
+            `Please enter number ${i}:`
         );
         number_arr.push(number);
     } 
@@ -81,3 +126,4 @@ function calculateAnswer(number_arr, operator) {
     }
     return answer
 }
+
