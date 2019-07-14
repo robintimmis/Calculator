@@ -7,11 +7,11 @@
 
 const readline = require('readline-sync');
 
+let s = 2;
 
-var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+if (s == 1 | s ==2) {
+    console.log('hi');
+};
 
-const result = words.filter(function(word) {return word.length > 6});
 
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
 

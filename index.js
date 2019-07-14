@@ -11,7 +11,11 @@ printWelcomeMessage();
 while (true) {
   const calculationMode = getCalculationMode();
   if (calculationMode === ARITHMETIC_MODE) {
-    arithmetic.performOneArithmeticCalculation();
+    try {
+      arithmetic.performOneArithmeticCalculation();
+    } catch(e) {
+      console.log(e.name + ': ' + e.message);
+    }
   } else if (calculationMode === VOWEL_COUNTING_MODE) {
     vowelCounting.performOneVowelCountingCalculation();
   } else if (calculationMode === 'q') {
