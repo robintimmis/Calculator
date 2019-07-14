@@ -3,6 +3,7 @@ const readline = require('readline-sync');
 exports.getNumberFromPrompt = getNumberFromPrompt;
 exports.getStringFromPrompt = getStringFromPrompt;
 exports.getNumberArrayFromPrompt = getNumberArrayFromPrompt;
+exports.getOperator = getOperator;
 
 function getNumberFromPrompt(prompt) {
     let number;
@@ -17,6 +18,18 @@ function getNumberFromPrompt(prompt) {
     return number;
 }
 
+function getOperator() {
+    let operator;
+    while (true) {
+        operator = getStringFromPrompt('Please enter the operator');
+        if (operator == '+' | operator == '-' | operator == '*' | operator == '/') {
+            break;
+          } else {
+            console.log('Sorry that is not a valid operator, please choose one of: + - * /')
+        }
+    }
+    return operator;
+}
 
 function getStringFromPrompt(prompt) {
     console.log(prompt);
@@ -35,3 +48,4 @@ function getNumberArrayFromPrompt(arrayLength) {
     } 
     return number_arr;
 }
+

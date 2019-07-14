@@ -11,21 +11,15 @@ printWelcomeMessage();
 while (true) {
   const calculationMode = getCalculationMode();
   if (calculationMode === ARITHMETIC_MODE) {
-    try {
-      arithmetic.performOneArithmeticCalculation();
-    } catch(e) {
-      console.log(e.name + ': ' + e.message);
-    }
+    arithmetic.performOneArithmeticCalculation();
   } else if (calculationMode === VOWEL_COUNTING_MODE) {
     vowelCounting.performOneVowelCountingCalculation();
   } else if (calculationMode === 'q') {
       break;
-  } 
+  } else {
+    console.log('That is not a valid option, please try again.')
+  }
 } 
-
-
-
-
 
 function printWelcomeMessage() {
     console.log('Welcome to the calculator!');

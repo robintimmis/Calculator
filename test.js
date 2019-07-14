@@ -7,11 +7,7 @@
 
 const readline = require('readline-sync');
 
-let s = 2;
-
-if (s == 1 | s ==2) {
-    console.log('hi');
-};
-
-
-
+let x = 6;
+if (x == 5 | x == 7) {
+    console.log('JHI');
+}

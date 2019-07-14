@@ -1,7 +1,7 @@
 const userInput = require('./userInput'); 
 
 exports.performOneArithmeticCalculation = function() {
-    const operator =  userInput.getStringFromPrompt('\nPlease enter the operator:');
+    const operator =  userInput.getOperator();
     const numberOfNumbers = userInput.getNumberFromPrompt(
         `How many numbers do you want to ${operator}?`
     );
@@ -21,7 +21,6 @@ function calculateAnswer(number_arr, operator) {
             return number_arr.reduce((acc, curr) => acc * curr);         
         case '/':
             return number_arr.filter(x => x !== 0).reduce((acc, curr) => acc / curr);    
-        default:
-            throw new Error('That is not a valid operator, please select one of: + - * /');
+        default:;
     }
 }
